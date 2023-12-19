@@ -1,4 +1,5 @@
 import pygame
+
 class ImageButton:
     def __init__(self, x, y, width, height, text, image_path, hover_image_path=None, sound_path=None):
         self.x = x
@@ -9,11 +10,12 @@ class ImageButton:
 
         self.image = pygame.image.load(image_path)
         self.image = pygame.transform.scale(self.image, (width, height))
-        self.hover_image = self.image = pygame.image.load(hover_image_path)
+        self.hover_image = self.image
         if hover_image_path:
             self.hover_image = pygame.image.load(hover_image_path)
             self.hover_image = pygame.transform.scale(self.hover_image, (width, height))
         self.rect = self.image.get_rect(topleft=(x, y))
+        self.sound = None
         if sound_path:
             self.sound = pygame.mixer.Sound(sound_path)
         self.is_hovered = False
