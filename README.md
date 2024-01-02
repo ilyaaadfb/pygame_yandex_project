@@ -1,1 +1,1 @@
-game arcanoid
+Arkanoid game
